@@ -1,12 +1,23 @@
 
 // Je pose la question à l'utilisateur pour savoir s'il veut effectuer un T-Ragozaur.
-const question = confirm("Voulez-vous laisser Math.floor(Math.random()) dicter votre destin ?");
+const question = confirm("Voulez-vous laisser Math.floor(Math.random(🤯)) vous faire gagner de l'argent en mâsse ?");
 // Si l'utilisateur confirm, la function tirage(s'exécute)
 // Si non, le navigateur affiche un message d'honte éternelle sur 120 générations
+
 if (question){
     tirage();
 }else{
+    loser();
+};
+
+function loser(){
     alert("Bouh, vous ratez quelque chose !");
+    const containerElement = document.querySelector('.container');
+    console.dir(containerElement);
+    const loserImg = document.createElement('img');
+    loserImg.src = "loser.jpg";
+    containerElement.append(loserImg);
+    loserImg.style.borderRadius = "24px";
 };
 
 // Le secret pour devenir millionnaire est encapsulé ici même

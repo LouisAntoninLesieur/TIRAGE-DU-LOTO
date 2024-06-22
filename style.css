@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-    --color-ball : rgb(21, 21, 200);
-    --color-bonus-ball: rgb(207, 23, 23);
+    --color-ball : rgb(12, 69, 148);
+    --color-bonus-ball: rgb(227, 23, 26);
+    --font-family: 'Roboto', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto';
+    margin: auto;
     width: 90vw;
     height: 100vh;
-    margin: auto;
-    background: linear-gradient(16deg, rgba(183,251,255,1) 30%, rgba(255,255,255,1) 67%);
+    font-family: var(--font-family);
+    background: linear-gradient(90deg, rgb(33, 161, 217) 0%, rgb(43, 205, 237) 67%);
 }
+
 
 .container {
     display: flex;
@@ -28,30 +30,64 @@ body {
 }
 
 .ball, .bonus-ball {
+    font-family: var(--font-family);
     width: 200px;
     height: 200px;
-    background-color: white;
     text-align: center;
     align-content: center;
+    margin: auto .5rem;
     font-size: 5rem;
     font-weight: bold;
     border-radius: 100%;
+    box-shadow: 6px 7px 9px 0px rgba(0,0,0,0.39);
     transition: .5s;
+}
+.ball:hover, .bonus-ball:hover {
+    transform: scale(1.1);
 }
 
 .ball {
     color :var(--color-ball);
+    background-color: rgb(255, 253, 253);
     border: .5rem solid var(--color-ball);
 }
 .bonus-ball {
-    background-color: var(--color-bonus-ball);
     color : white;
-    border: .35rem solid gold; 
+    background-color: var(--color-bonus-ball);
+    border: .35rem solid var(--color-bonus-ball); 
 }
 
-/* MEDIA QUERIES */
+.message-container {
+    margin: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.552);
+    border-radius: 24px;
+    box-shadow: 5px 0px 15px -3px rgba(0,0,0,0.1);
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-ball);
+}
+.message {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-ball);
+}
+.message a, .infos-legales a {
+    text-decoration: none;
+    color: var(--color-bonus-ball);
+}
+.message a:hover, .infos-legales a:hover {
+    text-decoration: underline;
+}
 
-@media screen and (max-width : 1405px){
+.infos-legales {
+    font-size: .75rem;
+}
+
+/* RESPONSIVE (TBC) */
+
+@media screen and (max-width : 1514px){
     .ball, .bonus-ball {
         width: 150px;
         height: 150px;
@@ -60,9 +96,17 @@ body {
 
 @media screen and (max-width : 1071px){
     .ball, .bonus-ball {
-        width: 120px;
-        height: 120px;
-        font-size: 3rem;
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width : 995px){
+    .ball, .bonus-ball {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
     }
 }
 

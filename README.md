@@ -16,3 +16,11 @@ Pour la suite de ce projet, j'aimerais :
 - donner le choix à l'utilisateur de **choisir le jeu** pour lequel il souhaite générer une grille.
 
 Evidemment, n'étant pas web designer, le but sera d'améliorer l'aspect physique de l'app.
+
+EDIT 22/06/204 :
+
+La **FANTASTIQUE** image de lose provient d'<a href="https://imgflip.com/">imgflip</a>.
+
+Les couleurs utilisées pour la création de cette petite application sont l'exclusive propriété de la <a href="https://www.fdj.fr/" target="_blank">FDJ©</a>.
+
+**JOUER COMPORTE DES RISQUES** *(mais essayer ma petite app et venir m'en causer pour l'améliorer, non)*.
