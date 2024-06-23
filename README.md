@@ -30,4 +30,8 @@ La **FANTASTIQUE** image de lose provient d'<a href="https://imgflip.com/">imgfl
 
 Les couleurs utilisées pour la création de cette petite application sont l'exclusive propriété de la <a href="https://www.fdj.fr/" target="_blank">FDJ©</a>.
 
+**LE RÉSULTAT THÉORIQUE EN IMAGE** (peut dépendre suivant le navigateur).
+
+<img width="1710" alt="Capture d’écran 2024-06-23 à 22 23 56" src="https://github.com/LouisAntoninLesieur/TIRAGE-DU-LOTO/assets/170421915/c9a47481-7466-4e05-8c00-c231ab180b50">
+
 **JOUER COMPORTE DES RISQUES** *(mais essayer ma petite app et venir m'en causer pour l'améliorer, non)*.
