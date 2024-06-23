@@ -1,7 +1,6 @@
 
 // Je pose la question à l'utilisateur pour savoir s'il veut effectuer un T-Ragozaur.
-const question = prompt("Notez si vous souhaitez obtenir un tirage Loto ou Euromillion (l'otrograffe est importante) \nLoto ou Euromillion pour gagner plein d'argent en masse?");
-// Si l'utilisateur confirm, la function tirage(s'exécute)
+const question = prompt("Générez une grille aléatoire pour votre jeu favori en le saisissant ici :\n-LOTO\n-EuroMillion\n-EuroDream\nATTENTION À L'OTROGRAFFE !\n(non sensible à la casse (majuscules/minuscules))");
 // Si non, le navigateur affiche un message d'honte éternelle sur 120 générations
 
 if (question.toLowerCase() === "loto") {
@@ -9,6 +8,8 @@ if (question.toLowerCase() === "loto") {
     tirage();
 }else if (question.toLowerCase() === "euromillion") {
     tirage(1, 50, 1, 12, 5, 2);
+} else if (question.toLowerCase() === "eurodream"){
+    tirage(1, 40, 1, 5, 6, 1)
 } else {
     loser();
 }
