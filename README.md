@@ -1,4 +1,4 @@
-# TIRAGE DU LOTO©
+# Tirage Loto© / Euromillion©
 
 Premiers pas JS dans une app créée en autonomie (et pour devenir riche, why not).
 
@@ -15,9 +15,16 @@ Pour la suite de ce projet, j'aimerais :
 - ajouter un **bouton** qui permette à l'utilisateur de **générer** un nouveau tirage.
 - donner le choix à l'utilisateur de **choisir le jeu** pour lequel il souhaite générer une grille.
 
-Evidemment, n'étant pas web designer, le but sera d'améliorer l'aspect physique de l'app.
-
-EDIT 22/06/204 :
+<details>
+<summary>EDITS</summary>
+<br>
+EDIT 23/06/2024 :
+  
+  - Permettre à l'utilisateur de choisir entre une génération de numéros pour le Loto© ou l'Euromillion© via un prompt.
+  - Ajout des paramètres en JS.
+  - Message sur la possibilité de devoir recharger la page si deux numéros identiques (ou plus) sont tirés.
+  - Légère modifications CSS.
+</details>
 
 La **FANTASTIQUE** image de lose provient d'<a href="https://imgflip.com/">imgflip</a>.
 
