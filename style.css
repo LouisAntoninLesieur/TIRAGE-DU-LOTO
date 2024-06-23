@@ -13,16 +13,26 @@ body {
     width: 90vw;
     height: 100vh;
     font-family: var(--font-family);
-    background: linear-gradient(90deg, rgb(33, 161, 217) 0%, rgb(43, 205, 237) 67%);
+    background: linear-gradient(150deg, rgb(3, 20, 102) 0%, rgb(43, 205, 237) 90%);
 }
 
+.disclaimer {
+    margin: 1rem auto;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: .75rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.552);
+    border-radius: 24px;
+    box-shadow: 5px 0px 15px -3px rgba(0,0,0,0.1);
+    color: whitesmoke;
+}
 
 .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: auto;
-    font-family: sans-serif;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.552);
     border-radius: 24px;
@@ -59,14 +69,15 @@ body {
 
 .message-container {
     margin: 1rem;
+    padding: 1rem;
     text-align: center;
+    color: var(--color-ball);
     background-color: rgba(255, 255, 255, 0.552);
     border-radius: 24px;
     box-shadow: 5px 0px 15px -3px rgba(0,0,0,0.1);
-    padding: 1rem;
     font-weight: bold;
     font-size: 1.5rem;
-    color: var(--color-ball);
+
 }
 .message {
     font-weight: bold;

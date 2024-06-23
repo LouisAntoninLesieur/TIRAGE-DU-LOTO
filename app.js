@@ -1,15 +1,17 @@
 
 // Je pose la question à l'utilisateur pour savoir s'il veut effectuer un T-Ragozaur.
-const question = confirm("Voulez-vous laisser Math.floor(Math.random(🤯)) vous faire gagner de l'argent en mâsse ?");
+const question = prompt("Notez si vous souhaitez obtenir un tirage Loto ou Euromillion (l'otrograffe est importante) \nLoto ou Euromillion pour gagner plein d'argent en masse?");
 // Si l'utilisateur confirm, la function tirage(s'exécute)
 // Si non, le navigateur affiche un message d'honte éternelle sur 120 générations
 
-if (question){
+if (question.toLowerCase() === "loto") {
+    tirage(1, 49, 1, 10, 5, 1);
     tirage();
-}else{
+}else if (question.toLowerCase() === "euromillion") {
+    tirage(1, 50, 1, 12, 5, 2);
+} else {
     loser();
-};
-
+}
 function loser(){
     alert("Bouh, vous ratez quelque chose !");
     const containerElement = document.querySelector('.container');
@@ -21,16 +23,16 @@ function loser(){
 };
 
 // Le secret pour devenir millionnaire est encapsulé ici même
-function tirage(){
+function tirage(defaultMin, defaultMax, defaultBonusMin, defaultBonusMax, defaultBall, defaultBonusBall){
 
     /* CRÉATION DE MES FONCTIONS POUR UN TIRAGE DE LOTO */
     
     // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et 49
-    function randomNumber(min = 1, max = 49){
+    function randomNumber(min = defaultMin, max = defaultMax){
         return Math.floor(Math.random() * (max - min +1)) + min;
     };
     // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et 10
-    function randomNumberBonus(min = 1, max = 10){
+    function randomNumberBonus(min = defaultBonusMin, max = defaultBonusMax){
         return Math.floor(Math.random() * (max - min +1)) + min;
     };
     
@@ -42,22 +44,27 @@ function tirage(){
     
     /* CRÉATION DE MES ÉLÉMENTS DIV ET DE LEURS ÉLÉMENTS P, DANS MON ÉLÉMENT .CONTAINER */
     
+    //Je crée un tableau vide qui stockera plus tard les valeurs aléatoires obtenues par la fonction randomNumber
+    let randomNumberArray = [];
+
     // Je crée une première boucle qui va créer les X premières div avec la class .ball
     //  - chaque p contiendra un textContent
     //  - chaque textContent affichera un randomNumber
-    for (i = 0; i < 5 ; i++){
+    for (i = 0; i < defaultBall ; i++){
         const divElement = document.createElement('div');
         containerElement.prepend(divElement);
         divElement.classList.add('ball');
         const pElement = document.createElement('p');
-        divElement.append(pElement);
         pElement.textContent = `${randomNumber()}`;
+        randomNumberArray.unshift(pElement.textContent);
+        randomNumberArray.sort(function(a, b){return a - b});
+        divElement.append(pElement);
     };
-    
+    console.log(randomNumberArray);
     // Je crée une seconde boucle qui va créer les X dernières div avec la class .bonus-ball
     //  - chaque p contiendra un textContent
     //  - chaque textContent affichera un randomNumberBunu
-    for (i = 0; i < 1 ; i++){
+    for (i = 0; i < defaultBonusBall ; i++){
         const divElement = document.createElement('div');
         containerElement.appendChild(divElement);
         divElement.classList.add('bonus-ball');
