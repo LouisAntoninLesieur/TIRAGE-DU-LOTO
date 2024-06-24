@@ -1,44 +1,64 @@
 
-// Je pose la question à l'utilisateur pour savoir s'il veut effectuer un T-Ragozaur.
-const question = prompt("Générez une grille aléatoire pour votre jeu favori en le saisissant ici :\n-LOTO\n-EuroMillion\n-EuroDream\nATTENTION À L'OTROGRAFFE !\n(non sensible à la casse (majuscules/minuscules))");
-// Si non, le navigateur affiche un message d'honte éternelle sur 120 générations
+// Je veux créer trois boutons qui permettent de générer une novelle grille, soit de loto, soit d'euromillion, soit d'eurodream
+// Je veux que ces boutons se trouvent dans une div en-dessous du disclaimer
+// Je dois donc récupérer mon élément body
+const bodyElement = document.querySelector('body');
+// Je dois créer la div qui acceuillera les trois boutons
+const divButtons = document.createElement("div")
+// Je donne à cette div une nouvelle class
+divButtons.classList.add("buttons-container");
+// Je créé le bouton de loto
+const buttonLoto = document.createElement("button");
+buttonLoto.textContent = "LOTO";
+buttonLoto.classList.add("button");
+divButtons.append(buttonLoto);
+// Je créé le bouton d'euromillion
+const buttonEuromillion = document.createElement("button");
+buttonEuromillion.textContent = "EUROMILLION";
+buttonEuromillion.classList.add("button");
+divButtons.append(buttonEuromillion);
+// Je crée le bouton d'eurodream
+const buttonEurodream = document.createElement("button");
+buttonEurodream.textContent = "EURODREAM";
+buttonEurodream.classList.add("button");
+divButtons.append(buttonEurodream);
+// J'ajoute la div au body
+bodyElement.prepend(divButtons);
 
-if (question.toLowerCase() === "loto") {
-    tirage(1, 49, 1, 10, 5, 1);
-    tirage();
-}else if (question.toLowerCase() === "euromillion") {
-    tirage(1, 50, 1, 12, 5, 2);
-} else if (question.toLowerCase() === "eurodream"){
-    tirage(1, 40, 1, 5, 6, 1)
-} else {
-    loser();
-}
-function loser(){
-    alert("Bouh, vous ratez quelque chose !");
+// Je veux que lorsque je clique sur le bouton de loto, je genère une nouvelle grille de loto
+buttonLoto.addEventListener('click', function(){
+    // Je fais en sorte que le contenu du conteneur soit vide pour pouvoir ajouter une nouvelle grille de loto
     const containerElement = document.querySelector('.container');
-    console.dir(containerElement);
-    const loserImg = document.createElement('img');
-    loserImg.src = "loser.jpg";
-    containerElement.append(loserImg);
-    loserImg.style.borderRadius = "24px";
-};
+    containerElement.innerHTML = "";
+    tirage(1, 49, 1, 10, 5, 1);
+});
+// Je veux que lorsque je clique sur le bouton d'euromillion, je genère une nouvelle grille d'euromillion
+buttonEuromillion.addEventListener('click', function(){
+    const containerElement = document.querySelector('.container');
+    containerElement.innerHTML = "";
+    tirage(1, 50, 1, 12, 5, 2);
+});
+// Je veux que lorsque je clique sur le bouton d'eurodream, je genère une nouvelle grille d'eurodream
+buttonEurodream.addEventListener('click', function(){
+    const containerElement = document.querySelector('.container');
+    containerElement.innerHTML = "";
+    tirage(1, 40, 1, 5, 6, 1)
+});
 
 // Le secret pour devenir millionnaire est encapsulé ici même
 function tirage(defaultMin, defaultMax, defaultBonusMin, defaultBonusMax, defaultBall, defaultBonusBall){
 
-    /* CRÉATION DE MES FONCTIONS POUR UN TIRAGE DE LOTO */
-    
-    // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et 49
+    /* CRÉATION DE MES FONCTIONS POUR UN TIRAGE*/
+    // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et le maximum du jeu (défini en paramètre)
     function randomNumber(min = defaultMin, max = defaultMax){
         return Math.floor(Math.random() * (max - min +1)) + min;
     };
-    // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et 10
+    // Je crée une fonction qui me permet de récupérer un numéro aléatoire entre 1 et le maximum du jeu (défini en paramètre)
     function randomNumberBonus(min = defaultBonusMin, max = defaultBonusMax){
         return Math.floor(Math.random() * (max - min +1)) + min;
     };
     
-    /* RÉCUPÉRATION DE MON OBJET .CONTAINER */
-    
+    /* RÉCUPÉRATION DE MON OBJET .CONTAINER */ 
     // Je crée une variable qui récupère mon élément body dans lequel je vais intégrer mes divs
     const containerElement = document.querySelector('.container');
     console.dir(containerElement);
@@ -58,7 +78,6 @@ function tirage(defaultMin, defaultMax, defaultBonusMin, defaultBonusMax, defaul
         const pElement = document.createElement('p');
         pElement.textContent = `${randomNumber()}`;
         randomNumberArray.unshift(pElement.textContent);
-        randomNumberArray.sort(function(a, b){return a - b});
         divElement.append(pElement);
     };
     console.log(randomNumberArray);

@@ -16,6 +16,21 @@ body {
     background: linear-gradient(150deg, rgb(3, 20, 102) 0%, rgb(43, 205, 237) 90%);
 }
 
+.buttons-container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: space-around;
+}
+
+.button {
+
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+}
+
 .disclaimer {
     margin: 1rem auto;
     padding: 1rem;
