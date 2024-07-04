@@ -178,20 +178,18 @@ body {
         width: 100px;
         height: 100px;
         font-size: 1.5rem;
+        margin: .4rem;
     }
     .buttons-container {
         flex-direction: column;
     }
     .button {
-        margin: .5rem;
-        padding: .5rem;
+        margin: .1rem;
     }
     .ball:hover, .bonus-ball:hover {
-        transform: none;
-        transition: none;
-        cursor: none;
-    }
-    .ball:active, .bonus-ball:active {
-        transform: none;
-    }
+    transform: scale(1);
+}
+.ball:active, .bonus-ball:active {
+    transform: scale(1);
+}
 }
