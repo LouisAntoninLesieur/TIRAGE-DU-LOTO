@@ -186,4 +186,12 @@ body {
         margin: .5rem;
         padding: .5rem;
     }
+    .ball:hover, .bonus-ball:hover {
+        transform: none;
+        transition: none;
+        cursor: none;
+    }
+    .ball:active, .bonus-ball:active {
+        transform: none;
+    }
 }
